@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,8 @@
         <nav class="navbar bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="cbt2.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> CECYTEM TECAMAC
+                    <img src="https://sites.google.com/site/elrincondewalli/_/rsrc/1469637555000/-porque-escoger-el-cecytem/CECYTEM_5584c_450x450.png?height=320&width=270" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> CECYTEM
+                    TECAMAC
                 </a>
             </div>
         </nav>
@@ -30,10 +31,10 @@
                 CRUD POSTS
             </div>
             <div class="card-body">
-                <button class="btn btn-danger btn-lg float-end m-2" data-bs-toggle="modal" data-bs-target="#addModal"><i class="bi bi-plus-circle m-2"></i>Agregar</button>
+                <button class="btn btn-danger btn-lg float-end m-2" data-bs-toggle="modal" data-bs-target="#addModal"><i class="bi bi-cloud-plus-fill m-2"></i>Agregar</button>
 
                 <table class="table">
-                    <thead class="table-green">
+                    <thead class="table-white">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">TITLE</th>
@@ -48,7 +49,7 @@
                 </table>
             </div>
             <div class="card-footer text-muted">
-                PABLO AARON Y LUPILLO
+                CREADP POR JOSE GUADALUPE RAMIREZ MORALES AND PABLO AARON RODRIGUEZ BAUTISTA
             </div>
         </div>
 
@@ -62,7 +63,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="bi bi-bookmark-plus"></i>AGREGAR POSTS</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="bi bi-plus-circle m-2"></i>AGREGAR POSTS</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -90,23 +91,25 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-arrow-down-circle m-1"></i>GUARDAR POSTS</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="bi bi-plus-circle m-2"></i>EDITAR POSTS</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">TITLE</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="titulo">
+                        <input type="text" class="form-control" id="etitle" placeholder="titulo">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label" aria-placeholder="ESCRIBIR AQUI">BODY</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label">BODY</label>
+                        <textarea class="form-control" id="ebody" rows="3"></textarea>
+                        <input type="hidden" id="eid" value="0">
+                        <input type="hidden" id="euserid" value="0">
                     </div>
                     ...
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-success" onclick="guardarPost()">Guardar</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
@@ -118,16 +121,16 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="bi bi-x-lg m-1"></i>ELIMINAR POSTS</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="bi bi-plus-circle m-2"></i>ELIMINAR POSTS</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
-                    <h2>quieres eliminar este post?</h2>
-                    ...
+                    <h2>Estas seguro de eliminar este Posts??</h2>
+                    <input type="hidden" id="deleteid"> ...
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success">SI</button>
+                    <button type="button" class="btn btn-success" onclick="deletePost()">SI</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                 </div>
             </div>
